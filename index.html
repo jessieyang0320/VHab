@@ -34,21 +34,26 @@
       // Add a plane
       var planeGeo = new THREE.PlaneGeometry(0.1, 0.2);
       var material = new THREE.MeshPhongMaterial();
-      var buttonMesh = new THREE.Mesh(planeGeo, material);
+      material.color.setHex(0xd81a0d)
 
+      addButton(-0.2, 0.1, -0.05)
+      addButton(0.2, 0.1, -0.05)
       // Circular button:
-      var circleGeo = new THREE.CircleGeometry(0.1, 32);
-      buttonMesh = new THREE.Mesh(circleGeo, material.clone());
-      buttonMesh.name = "round button";
-      buttonMesh.position.set(-0.12, 0.1, -0.1);
-      scene.add(buttonMesh);
-      var roundButton = new PushButton(
-        new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
-      ).on('press', function(mesh){
-        mesh.material.color.setHex(0xccccff);
-      }).on('release', function(mesh){
-        mesh.material.color.setHex(0xeeeeee);
-      });
+      function addButton(px, py, pz) {
+
+        var circleGeo = new THREE.CircleGeometry(0.05, 32);
+        var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
+        buttonMesh.name = "round button";
+        buttonMesh.position.set(px, py, pz);
+        scene.add(buttonMesh);
+        var roundButton = new PushButton(
+          new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
+        ).on('press', function(mesh){
+          mesh.material.color.setHex(0xccccff);
+        }).on('release', function(mesh){
+          mesh.material.color.setHex(0xd81a0d);
+        });
+      }
 
 		</script>
 	</body>
