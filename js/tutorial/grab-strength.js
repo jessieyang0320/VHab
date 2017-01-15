@@ -4,7 +4,6 @@ Leap.loop({background: true}, {
   if (hand.grabStrength > .8){
     moveOn("You did it!! You can move on.")
   }
-  output.innerHTML = hand.grabStrength.toPrecision(3);
   progress.style.width = hand.grabStrength * 100 + '%';
 
 }
@@ -16,5 +15,4 @@ Leap.loop({background: true}, {
       .use('proximity');
 
 
-var output = document.getElementById('output'),
-    progress = document.getElementById('progress');
+var progress = document.getElementById('progress');
