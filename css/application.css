@@ -1,0 +1,23 @@
+body{
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+}
+#output{
+  font-size: 66px;
+  color: #005d98;
+  text-align: left;
+  position: fixed;
+  bottom: 18px;
+}
+
+#progress {
+  background: #005d98;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 16px;
+  width: 0%;
+}
+img#connect-leap{
+
+  max-width: 100%;
+}
