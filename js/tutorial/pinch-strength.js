@@ -1,11 +1,11 @@
 Leap.loop({background: true}, {
 
   hand: function(hand){
-  if (hand.grabStrength > .8 && finished.status === false){
-    moveOn("You did it!! You can move on.", '../index.html')
+  if (hand.pinchStrength > .8 && finished.status === false){
+    moveOn("You did it!! You can move on.", 'finger-angle.html')
     finished.status = true
   }
-  progress.style.width = hand.grabStrength * 100 + '%';
+  progress.style.width = hand.pinchStrength * 100 + '%';
 
 }
 }).use('boneHand', {

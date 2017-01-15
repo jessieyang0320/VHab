@@ -7,8 +7,9 @@ Leap.loop({background: true}, {
     );
 
     var angle = Math.acos(dotProduct);
-    if (angle > .2){
-      moveOn("You did it! You can move on.")
+    if (angle > .2 && finished.status === false){
+      moveOn("You did it! You can move on.", 'grab-strength.html')
+      finished.status = true;
     }
 
     progress.style.width = angle * 100 + '%';
