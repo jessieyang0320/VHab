@@ -1,3 +1,9 @@
+function Counter() {
+  this.count = 0
+}
+
+var counter = new Counter();
+
 var material = new THREE.MeshPhongMaterial();
 material.color.setHex(0xd81a0d)
 
@@ -13,7 +19,10 @@ function addButton(px, py, pz) {
     new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
   ).on('press', function(mesh){
     mesh.material.color.setHex(0xccccff);
-    
+    counter.count += 1;
+    if(checkSuccess()) {
+      moveOn();
+    }
   }).on('release', function(mesh){
     mesh.material.color.setHex(0xd81a0d);
   });
@@ -27,7 +36,13 @@ addButton(0.1, 0.05, -0.05)
 addButton(-0.1, 0.25, -0.05)
 addButton(-0.1, 0.05, -0.05)
 
+function moveOn() {
+  var successMsg = "<p>You pushed all 4 buttons!</p>";
+  $(".message").html(successMsg);
+}
 
-$(document).ready(function() {
-  var instructions = '<div>Hello</div>'
-});
+function checkSuccess() {
+  if(counter.count === 4) {
+    return true;
+  }
+}
