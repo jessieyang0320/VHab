@@ -9,8 +9,6 @@
 		</style>
 	</head>
 	<body>
-  
-  
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
     <script src="https://js.leapmotion.com/leap-0.6.4.js"></script>
     <script src="//js.leapmotion.com/leap-plugins-0.1.12.js"></script>
@@ -18,14 +16,7 @@
 		<script>
       'use strict';
       // Set up plugins
-      Leap.loop({background: true}, {
-
-      hand: function(hand){
-      
-      console.log(hand.pinchStrength.toPrecision(2));
-      }
-      
-    })
+      Leap.loop({background: true})
         .use('transform', {
           vr: 'desktop' // Switch to meters.
         })
@@ -65,6 +56,5 @@
       }
 
 		</script>
-
 	</body>
 </html>
