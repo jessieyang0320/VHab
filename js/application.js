@@ -1,3 +1,13 @@
+var material = new THREE.MeshPhongMaterial();
+material.color.setHex(0xd81a0d)
+
+function Finished() {
+  this.status = false;
+}
+
+var finished = new Finished();
+
+
 function moveOn(message, newLocation) {
   var successMsg = "<p>" + message + "</p>";
   $(".message").html(successMsg);

@@ -4,8 +4,7 @@ function Counter() {
 
 var counter = new Counter();
 
-var material = new THREE.MeshPhongMaterial();
-material.color.setHex(0xd81a0d)
+
 
 // Circular button:
 var gameCallBack = function(mesh){

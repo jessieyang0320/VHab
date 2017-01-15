@@ -1,8 +1,9 @@
 Leap.loop({background: true}, {
 
   hand: function(hand){
-  if (hand.grabStrength > .8){
-    moveOn("You did it!! You can move on.")
+  if (hand.grabStrength > .8 && finished.status === false){
+    moveOn("You did it!! You can move on.", '../index.html')
+    finished.status = true
   }
   progress.style.width = hand.grabStrength * 100 + '%';
 
