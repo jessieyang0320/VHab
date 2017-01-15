@@ -1,19 +1,17 @@
-
-window.TO_DEG = 180 / Math.PI;
-
 Leap.loop({background: true}, {
 
   hand: function(hand){
-
     var dotProduct = Leap.vec3.dot(
         hand.indexFinger.proximal.direction(),
         hand.middleFinger.proximal.direction()
     );
 
     var angle = Math.acos(dotProduct);
+    if (angle > .2){
+      moveOn("You did it! You can move on.")
+    }
 
     progress.style.width = angle * 100 + '%';
-
 }
 }).use('transform', {
         vr: 'desktop'
