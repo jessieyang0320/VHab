@@ -13,7 +13,21 @@ function addButton(px, py, pz) {
     new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
   ).on('press', function(mesh){
     mesh.material.color.setHex(0xccccff);
+    
   }).on('release', function(mesh){
     mesh.material.color.setHex(0xd81a0d);
   });
 }
+
+
+// Add Buttons to the scene
+// addButton(0, 0.15, -0.05)
+addButton(0.1, 0.25, -0.05)
+addButton(0.1, 0.05, -0.05)
+addButton(-0.1, 0.25, -0.05)
+addButton(-0.1, 0.05, -0.05)
+
+
+$(document).ready(function() {
+  var instructions = '<div>Hello</div>'
+});
