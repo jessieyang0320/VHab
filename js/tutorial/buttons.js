@@ -21,25 +21,18 @@ function addButton(px, py, pz) {
     mesh.material.color.setHex(0xccccff);
     counter.count += 1;
     if(checkSuccess()) {
-      moveOn();
+      moveOn("You pushed all 4 buttons!");
     }
   }).on('release', function(mesh){
     mesh.material.color.setHex(0xd81a0d);
   });
 }
 
-
 // Add Buttons to the scene
-// addButton(0, 0.15, -0.05)
 addButton(0.1, 0.25, -0.05)
 addButton(0.1, 0.05, -0.05)
 addButton(-0.1, 0.25, -0.05)
 addButton(-0.1, 0.05, -0.05)
-
-function moveOn() {
-  var successMsg = "<p>You pushed all 4 buttons!</p>";
-  $(".message").html(successMsg);
-}
 
 function checkSuccess() {
   if(counter.count === 4) {

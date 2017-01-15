@@ -1,13 +1,6 @@
 body{
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
-#output{
-  font-size: 66px;
-  color: #005d98;
-  text-align: left;
-  position: fixed;
-  bottom: 18px;
-}
 
 #progress {
   background: #005d98;
@@ -20,4 +13,8 @@ body{
 img#connect-leap{
 
   max-width: 100%;
+}
+
+canvas{
+  z-index: -1;
 }
