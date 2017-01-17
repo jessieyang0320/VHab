@@ -7,7 +7,6 @@ function Finished() {
 
 var finished = new Finished();
 
-
 function moveOn(message, newLocation) {
   var successMsg = "<p>" + message + "</p>";
   $(".message").html(successMsg);
