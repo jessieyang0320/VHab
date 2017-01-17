@@ -8,17 +8,16 @@ var counter = new Counter();
 Leap.loop({background: true}, {
 
   hand: function(hand){
-      
+
   if (hand.pinchStrength > 0.8 && finished.status === false){
      counter.count +=1
      console.log("hello")
      sleep(800)
 
-    if(checkSuccess()){    
-      moveOn("You did it!! You can move on.", 'finger-angle.html')
+    if(checkSuccess()){
+      moveOn("You did it!! You can move on.", '../index.html')
       finished.status = true
     }
-
 
   }
 
@@ -54,4 +53,3 @@ function checkSuccess() {
 
 var output = document.getElementById('output'),
     progress = document.getElementById('progress');
-

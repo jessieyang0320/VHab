@@ -18,14 +18,14 @@ Leap.loop({background: true}, {
 // 0.2 -> 15 degree  0.5->30 degree
       console.log(counter.count)
       counter.count +=1
-      
+
       sleep(800)
 
-      if(checkSuccess()){    
-      moveOn("You did it!! You can move on.", 'finger-angle.html')
+      if(checkSuccess()){
+      moveOn("You did it!! You can move on.", '../index.html')
       finished.status = true
       }
-      
+
     }
 
     output_rad.innerHTML = (angle ).toPrecision(2) + ' rad';
