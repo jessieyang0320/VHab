@@ -12,16 +12,11 @@ var counter = new Counter();
 var gameCallBack = function(mesh){
   mesh.material.color.setHex(0xccccff);
   counter.count += 1;
-  if(checkSuccess()) {
-    moveOn("You pushed all 4 buttons!", 'pinch-strength.html');
-  }
+  scene.remove(this.plane.mesh)
 }
 
 // Add Buttons to the scene
-addWhackamole(0.15, 0.3, -0.05, gameCallBack)
-addWhackamole(0.15, 0.10, -0.05, gameCallBack)
-addWhackamole(-0.18, 0.3, -0.05, gameCallBack)
-addWhackamole(-0.18, 0.10, -0.05, gameCallBack)
+addWhackamole(gameCallBack)
 
 // ranges:
 // X: -0.18 - 0.15
@@ -34,11 +29,15 @@ function checkSuccess() {
   }
 }
 
-function addWhackamole(px, py, pz, callBackFunction) {
+function addWhackamole(callBackFunction) {
 
-  var circleGeo = new THREE.CircleGeometry(0.03, 32);
+  var circleGeo = new THREE.CircleGeometry(0.02, 32);
   var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
   buttonMesh.name = "round button";
+  var px = parseFloat((Math.random() * (0.15 + 0.18) - 0.18).toFixed(2))
+  var py = parseFloat((Math.random() * (0.3 - 0.1) + 0.1).toFixed(2))
+  var pz = -0.05
+
   buttonMesh.position.set(px, py, pz);
   scene.add(buttonMesh);
   var roundButton = new PushButton(
