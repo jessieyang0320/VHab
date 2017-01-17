@@ -47,8 +47,6 @@ function addWhackamole(callBackFunction) {
   var circleGeo = new THREE.CircleGeometry(0.02, 32);
   var jrMaterial = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture("../img/jackrabbit.png") });
   var buttonMesh = new THREE.Mesh(circleGeo, jrMaterial.clone());
-  // var px = parseFloat((Math.random() * (0.15 + 0.18) - 0.18).toFixed(2))
-  // var py = parseFloat((Math.random() * (0.3 - 0.1) + 0.1).toFixed(2))
   var px = sample(xPositions)
   var py = sample(yPositions)
   var pz = -0.05
@@ -57,17 +55,12 @@ function addWhackamole(callBackFunction) {
   var roundButton = new PushButton(
     new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
   ).on('press', callBackFunction
-  ).on('release', function(mesh){
-    mesh.material.color.setHex(0xd81a0d);
-  });
 }
 
 function addTrap(callBackFunction)  {
   var circleGeo = new THREE.CircleGeometry(0.02, 32);
   var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
   buttonMesh.name = "mole";
-  // var px = parseFloat((Math.random() * (0.15 + 0.18) - 0.18).toFixed(2))
-  // var py = parseFloat((Math.random() * (0.3 - 0.1) + 0.1).toFixed(2))
   var px = sample(xPositions)
   var py = sample(yPositions)
   var pz = -0.05
