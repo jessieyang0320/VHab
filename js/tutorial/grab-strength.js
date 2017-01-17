@@ -1,5 +1,6 @@
 Leap.loop({background: true}, {
 
+
   hand: function(hand){
   if (hand.grabStrength > .8 && finished.status === false){
     moveOn("You did it!! You can move on.", '../index.html')
@@ -17,3 +18,4 @@ Leap.loop({background: true}, {
 
 
 var progress = document.getElementById('progress');
+    output = document.getElementById('output');

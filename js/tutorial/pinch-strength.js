@@ -5,8 +5,9 @@ Leap.loop({background: true}, {
     moveOn("You did it!! You can move on.", 'finger-angle.html')
     finished.status = true
   }
-  progress.style.width = hand.pinchStrength * 100 + '%';
 
+  output.innerHTML = hand.pinchStrength.toPrecision(2);
+  progress.style.width = hand.pinchStrength * 100 + '%';
 }
 }).use('boneHand', {
         targetEl: document.body,
@@ -16,4 +17,5 @@ Leap.loop({background: true}, {
       .use('proximity');
 
 
-var progress = document.getElementById('progress');
+var output = document.getElementById('output'),
+    progress = document.getElementById('progress');
