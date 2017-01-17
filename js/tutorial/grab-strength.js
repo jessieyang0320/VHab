@@ -6,6 +6,7 @@ Leap.loop({background: true}, {
     moveOn("You did it!! You can move on.", '../index.html')
     finished.status = true
   }
+  output.innerHTML = hand.grabStrength.toPrecision(2);
   progress.style.width = hand.grabStrength * 100 + '%';
 
 }
