@@ -1,19 +1,22 @@
 function Counter() {
-  this.count = 0
+  this.count = 5
 }
 
 var counter = new Counter();
-
+var finished = new Finished();
 
 Leap.loop({background: true}, {
 
   hand: function(hand){
   if (hand.grabStrength > .8 && finished.status === false){
-    counter.count += 1
+    counter.count -= 1
     console.log(counter.count)
-    sleep(800)
-    // moveOn("You did it!! You can move on.", '../index.html')
-    // finished.status = true
+    sleep(790)
+    if (counter.count === 0) {
+    moveOn("You did it!! You can move on.", '../index.html')
+    finished.status = true    
+    }
+
   }
   output.innerHTML = hand.grabStrength.toPrecision(2);
   progress.style.width = hand.grabStrength * 100 + '%';
