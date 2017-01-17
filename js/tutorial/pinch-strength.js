@@ -2,6 +2,7 @@ function Counter() {
   this.count = 0
 }
 
+
 var counter = new Counter();
 
 Leap.loop({background: true}, {
@@ -18,16 +19,20 @@ Leap.loop({background: true}, {
       finished.status = true
     }
 
-  }
-  progress.style.width = hand.pinchStrength * 100 + '%';
 
+  }
+
+  output.innerHTML = hand.pinchStrength.toPrecision(2);
+  progress.style.width = hand.pinchStrength * 100 + '%';
 }
+
 }).use('boneHand', {
         targetEl: document.body,
         jointColor: new THREE.Color(0xffffff),
         rendererOps: {antialias: true}
       })
       .use('proximity');
+
 
 
 
@@ -46,4 +51,7 @@ function checkSuccess() {
   }
 }
 
-var progress = document.getElementById('progress');
+
+var output = document.getElementById('output'),
+    progress = document.getElementById('progress');
+
