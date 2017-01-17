@@ -13,51 +13,9 @@
     <script src="https://js.leapmotion.com/leap-0.6.4.js"></script>
     <script src="//js.leapmotion.com/leap-plugins-0.1.12.js"></script>
     <script src="//js.leapmotion.com/leap-widgets-0.1.0.js"></script>
-		<script>
-      'use strict';
-      // Set up plugins
-      Leap.loop({background: true})
-        .use('transform', {
-          vr: 'desktop' // Switch to meters.
-        })
-        .use('boneHand', {
-          targetEl: document.body,
-          jointColor: new THREE.Color(0xffffff),
-          rendererOps: {antialias: true}
-        })
-        .use('proximity');
-      // Set up scene
-      var scene = Leap.loopController.plugins.boneHand.scene;
-      var camera = Leap.loopController.plugins.boneHand.camera;
-      var renderer = Leap.loopController.plugins.boneHand.renderer;
-      camera.position.set( 0, 0.3, 0.6 );
-      // Add a plane
-      var material = new THREE.MeshPhongMaterial();
-      material.color.setHex(0xd81a0d)
+		<script src="../js/application.js" charset="utf-8"></script>
+		<script src="../js/tutorial/scene.js" charset="utf-8"></script>
+		<script src="../js/tutorial/index.js" charset="utf-8"></script>
 
-      addButton(-0.2, 0.1, -0.05, function(mesh){
-				mesh.material.color.setHex(0xccccff);
-				window.location.href = 'tutorial/buttons.html'
-			})
-      addButton(0.2, 0.1, -0.05, function(mesh){
-				mesh.material.color.setHex(0xccccff);
-			})
-      // Circular button:
-      function addButton(px, py, pz, callBackFunction) {
-
-        var circleGeo = new THREE.CircleGeometry(0.05, 32);
-        var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
-        buttonMesh.name = "round button";
-        buttonMesh.position.set(px, py, pz);
-        scene.add(buttonMesh);
-        var roundButton = new PushButton(
-          new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
-        ).on('press', callBackFunction
-				).on('release', function(mesh){
-          mesh.material.color.setHex(0xd81a0d);
-        });
-      }
-
-		</script>
 	</body>
 </html>
