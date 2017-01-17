@@ -6,11 +6,15 @@ Leap.loop({background: true}, {
         hand.middleFinger.proximal.direction()
     );
 
+    window.TO_DEG = 180 / Math.PI;
     var angle = Math.acos(dotProduct);
     if (angle > .2 && finished.status === false){
       moveOn("You did it! You can move on.", 'grab-strength.html')
       finished.status = true;
     }
+
+    output_rad.innerHTML = (angle ).toPrecision(2) + ' rad';
+    output_deg.innerHTML = (angle * TO_DEG).toPrecision(2) + '°';
 
     progress.style.width = angle * 100 + '%';
 }
