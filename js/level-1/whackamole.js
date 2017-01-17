@@ -10,6 +10,9 @@ var xPositions = [-0.17, -0.14, -0.11, -0.08, -0.05, -0.02, 0.01, 0.05, 0.07, 0.
 var gameCallBack = function(mesh){
   mesh.material.color.setHex(0xccccff);
   counter.hits += 1;
+  if (counter.hits === 3) {
+    alert("You won!");
+  }
   $("#hit_count").html(counter.hits)
   scene.remove(this.plane.mesh)
   addWhackamole(gameCallBack)
@@ -19,7 +22,9 @@ var trapCallBack = function(mesh) {
   counter.traps += 1;
   $("#lives_count").html(3 - counter.traps);
   scene.remove(this.plane.mesh)
-  addTrap(trapCallBack);
+  if(counter.traps === 3){
+    alert("game over");
+  }
 }
 
 // Add Buttons to the scene
@@ -73,6 +78,10 @@ function addTrap(callBackFunction)  {
   var roundButton = new PushButton(
     new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
   ).on('press', callBackFunction)
+  setTimeout(function() {
+    scene.remove(buttonMesh)
+    addTrap(trapCallBack)
+  }, 5000)
 }
 
 function Counter() {
