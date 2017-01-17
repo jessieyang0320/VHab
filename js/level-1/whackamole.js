@@ -26,7 +26,6 @@ var trapCallBack = function(mesh) {
     alert("game over");
   }
 }
-
 // Add Buttons to the scene
 addWhackamole(gameCallBack)
 addTrap(trapCallBack)
@@ -54,7 +53,7 @@ function addWhackamole(callBackFunction) {
   scene.add(buttonMesh);
   var roundButton = new PushButton(
     new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
-  ).on('press', callBackFunction
+  ).on('press', callBackFunction)
 }
 
 function addTrap(callBackFunction)  {
