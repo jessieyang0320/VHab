@@ -1,6 +1,5 @@
 addButton(-0.2, 0.1, -0.05, function(mesh){
   window.location.href = 'tutorial/buttons.html'
-  mesh.dynamicTexture.drawText('Hi', 70, 280, 'black')
 })
 
 addButton(-0.1, 0.1, -0.05, function(mesh) {
