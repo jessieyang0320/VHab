@@ -47,6 +47,7 @@ function addNavigationButton(newLocation) {
   var circleGeo = new THREE.CircleGeometry(0.025, 32);
   var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
   buttonMesh.name = "round button";
+  buttonMesh.material.color.setHex(0x43C59E);
   buttonMesh.position.set(0.18, 0.30, -0.05);
   scene.add(buttonMesh);
   var roundButton = new PushButton(
