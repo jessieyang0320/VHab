@@ -15,7 +15,7 @@ Leap.loop({background: true}, {
     window.TO_DEG = 180 / Math.PI;
     var angle = Math.acos(dotProduct);
     if (angle > .4 && finished.status === false){
-// 0.2 -> 15 degree  0.5->30 degree
+
       console.log(counter.count)
       counter.count +=1
 
