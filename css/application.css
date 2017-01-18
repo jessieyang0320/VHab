@@ -69,14 +69,34 @@ canvas{
 }
 
 .message {
+  z-index: 5;
   position: absolute;
   top: 90px;
   display: none;
   left: 40%;
-  height: 150px;
   width: 200px;
   background-color: #60D7F1;
   border-radius: 20px;
   border: 10px solid #60D7F1;
   border-top: 25px solid #60D7F1;
+}
+#left_background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 50%;
+  z-index: -1;
+  background-color: #EDEDED;
+}
+#right_background {
+  position: absolute;
+  border-left: 3px solid black;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 50%;
+  z-index: -1;
+  background-color: #43C59E;
+
 }
