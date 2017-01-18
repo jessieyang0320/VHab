@@ -2,17 +2,22 @@ function Counter() {
   this.count = 0
 }
 
+var pinchStrength , oPinchStrength;
 
+var pinchStrengthCutoff = .8;
 var counter = new Counter();
+
+
 
 Leap.loop({background: true}, {
 
   hand: function(hand){
-
-  if (hand.pinchStrength > 0.8 && finished.status === false){
+oPinchStrength = pinchStrength;
+pinchStrength = hand.pinchStrength;
+  if (pinchStrength > pinchStrengthCutoff && oPinchStrength <= pinchStrengthCutoff && finished.status === false){
      counter.count +=1
      console.log("hello")
-     sleep(800)
+     // sleep(800)
 
     if(checkSuccess()){
       moveOn("You did it!! You can move on.", '../index.html')
