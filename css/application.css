@@ -22,9 +22,10 @@ video {
   top: 80px;
 }
 #statement{
+  font-family: 'Montserrat';
   font-size: 25px;
   color: #000000;
-  margin-left: 480px;
+  margin-left: 500px;
   text-align: center;
   position: fixed;
   top: 250px;
