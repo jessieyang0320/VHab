@@ -1,6 +1,19 @@
+#output_rad, #output_deg{
+  font-size: 66px;
+  color: #005d98;
+  text-align: left;
+  position: fixed;
+  bottom: 18px;
+  cursor: pointer;
+}
+#output_rad{
+  display: none;
+}
+
 body{
   font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
+
 video {
   position: fixed;
   top: 50%;
@@ -30,6 +43,7 @@ video {
   height: 16px;
   width: 0%;
 }
+
 img#connect-leap{
 
   max-width: 100%;
