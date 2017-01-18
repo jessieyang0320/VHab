@@ -21,7 +21,7 @@ Leap.loop({background: true}, {
 
     
     if (fingerAngle > fingerAngleCutoff && oFingerAngle<=fingerAngleCutoff && finished.status === false){
-// 0.2 -> 15 degree  0.5->30 degree
+
       console.log(counter.count)
       counter.count +=1
 
@@ -47,14 +47,6 @@ Leap.loop({background: true}, {
       })
       .use('proximity');
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
 
 function checkSuccess() {
   if(counter.count === 4) {
