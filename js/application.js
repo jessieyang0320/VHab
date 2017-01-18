@@ -25,13 +25,31 @@ function addButton(px, py, pz, callBackFunction) {
   texture3 = dynamicTexture.drawText('Grab Strength', 70, 280, 'black')
   texture4 = dynamicTexture.drawText('Whackamole', 70, 280, 'black')
   var material    = new THREE.MeshBasicMaterial({      
-      map : texture1.texture,
+      map : texture.texture,
+      color: 0xffffff, 
+      linewidth: 2
+  })
+  var material2    = new THREE.MeshBasicMaterial({      
+      map : texture2.texture,
+      color: 0xffffff, 
+      linewidth: 2
+  })
+  var material3    = new THREE.MeshBasicMaterial({      
+      map : texture3.texture,
+      color: 0xffffff, 
+      linewidth: 2
+  })
+  var material4    = new THREE.MeshBasicMaterial({      
+      map : texture4.texture,
       color: 0xffffff, 
       linewidth: 2
   })
 
   var circleGeo = new THREE.CircleGeometry(0.04, 32);
-  var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
+  var buttonMesh = new THREE.Mesh(circleGeo, material);
+  var buttonMesh = new THREE.Mesh(circleGeo, material2);
+  var buttonMesh = new THREE.Mesh(circleGeo, material3);
+  var buttonMesh = new THREE.Mesh(circleGeo, material2);
   buttonMesh.name = "round button";
   buttonMesh.position.set(px, py, pz);
   scene.add(buttonMesh);
