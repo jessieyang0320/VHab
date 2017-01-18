@@ -1,6 +1,6 @@
 camera.position.set( 0, 0.3, 0.3 );
 
-
+var mole;
 var counter = new Counter();
 
 var yPositions = [0.1, 0.2, 0.3]
@@ -15,7 +15,6 @@ var gameCallBack = function(mesh){
   }
   $("#hit_count").html(counter.hits)
   scene.remove(this.plane.mesh)
-  addWhackamole(gameCallBack)
 }
 
 var trapCallBack = function(mesh) {
@@ -28,6 +27,7 @@ var trapCallBack = function(mesh) {
 }
 // Add Buttons to the scene
 addWhackamole(gameCallBack)
+addTrap(trapCallBack)
 addTrap(trapCallBack)
 
 // ranges:
@@ -43,28 +43,35 @@ function checkSuccess() {
 
 function addWhackamole(callBackFunction) {
 
-  var circleGeo = new THREE.CircleGeometry(0.02, 32);
+  var geometry = new THREE.CircleGeometry(0.03, 32);
   var jrMaterial = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture("../img/jackrabbit.png") });
-  var buttonMesh = new THREE.Mesh(circleGeo, jrMaterial.clone());
+  var buttonMesh = new THREE.Mesh(geometry, jrMaterial.clone());
   var px = sample(xPositions)
   var py = sample(yPositions)
   var pz = -0.05
+  // buttonMesh.material.color.setHex(0x60D7F1)
+  buttonMesh.name = "mole";
   buttonMesh.position.set(px, py, pz);
   scene.add(buttonMesh);
+  mole = buttonMesh;
   var roundButton = new PushButton(
     new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
   ).on('press', callBackFunction)
+  setTimeout(function() {
+    scene.remove(buttonMesh)
+    addWhackamole(gameCallBack)
+  }, 4000)
 }
 
 function addTrap(callBackFunction)  {
   var circleGeo = new THREE.CircleGeometry(0.02, 32);
   var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
-  buttonMesh.name = "mole";
+  buttonMesh.name = "trap";
   var px = sample(xPositions)
   var py = sample(yPositions)
   var pz = -0.05
 
-  buttonMesh.material.color.setHex(0x223047)
+  buttonMesh.material.color.setHex(0xe80606)
   buttonMesh.position.set(px, py, pz);
   scene.add(buttonMesh);
   var roundButton = new PushButton(
@@ -73,12 +80,12 @@ function addTrap(callBackFunction)  {
   setTimeout(function() {
     scene.remove(buttonMesh)
     addTrap(trapCallBack)
-  }, 5000)
+  }, 3000)
 }
 
-function Counter() {
-  this.hits = 0;
-  this.traps = 0;
+  function Counter() {
+    this.hits = 0;
+    this.traps = 0;
 }
 
 function sample(arr) {
