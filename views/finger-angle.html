@@ -8,19 +8,46 @@
     <script src="//js.leapmotion.com/leap-plugins-0.1.12.js"></script>
     <script src="//js.leapmotion.com/leap-widgets-0.1.0.js"></script>
     <link rel="stylesheet" href="../css/application.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <style>
+     body {
+        background-color: #EDEDED;
+      }
+      #output_rad, #output_deg{
+        font-size: 66px;
+        color: #43C59E;
+        text-align: left;
+        position: fixed;
+        bottom: 18px;
+        cursor: pointer;
+      }
+      #output_rad{
+        display: none;
+      }
+    </style>
   </head>
 
   <body>
     <div class="message-wrapper">
       <div class="message">
-        Insert Messages Here
+        <h3>Finger Stretch Practice</h3>
+      </div>
+
+      <div id="pinch-strength-instruction">
+        <h4>Instructions: Split index finger and middle finger as wide as possible, do it four times</h4>
+        
       </div>
     </div>
     <div id=output_rad></div>
     <div id=output_deg></div>
     <div id=progress></div>
+
+    
+    <audio id="angle_sound" src="../audio/Fuzzy-Beep.mp3" type="audio/ogg"></audio>
+
     <script src='../js/helpers/application.js'></script>
     <script src="../js/helpers/scene.js"></script>
     <script src="../js/controllers/finger-angle.js"></script>
+
   </body>
 </html>

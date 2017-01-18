@@ -24,6 +24,7 @@ Leap.loop({background: true}, {
 
       console.log(counter.count)
       counter.count +=1
+      $("#angle_sound")[0].play();
 
       if(checkSuccess()){
       moveOn("You did it!! You can move on.", '../index.html')

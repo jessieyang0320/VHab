@@ -7,18 +7,31 @@
     <script src="//js.leapmotion.com/leap-plugins-0.1.12.js"></script>
     <script src="//js.leapmotion.com/leap-widgets-0.1.0.js"></script>
     <link rel="stylesheet" href="../css/application.css">
+    <style>
+     body {
+        background-color: #EDEDED;
+      }
+    </style>
   </head>
   <body>
     <div class="message-wrapper">
       <div class="message">
-        Insert Messages Here
+        <h3>Grab Strength Practice</h3>
+      </div>
+      <div id="pinch-strength-instruction">
+        <h4>Instructions: Give me Five grabs!</h4>
+        
       </div>
     </div>
     <div id=output></div>
     <div id=progress></div>
+
+    <audio id="grab_sound" src="../audio/Fuzzy-Beep.mp3" type="audio/ogg"></audio>
+
     <script src='../js/helpers/application.js'></script>
     <script src="../js/helpers/scene.js"></script>
     <script src="../js/controllers/grab-strength.js"></script>
+
   </body>
 
 </html>

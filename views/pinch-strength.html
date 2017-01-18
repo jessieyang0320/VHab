@@ -8,18 +8,30 @@
     <script src="//js.leapmotion.com/leap-widgets-0.1.0.js"></script>
     <link rel="stylesheet" href="../css/application.css">
   </head>
-
+  <style>
+   body {
+      background-color: #EDEDED;
+    }
+  </style>
   <body>
     <div class="message-wrapper">
       <div class="message">
-        Insert Messages Here
+        <h3>Pinch Strength Practice</h3>
       </div>
+      <div id="pinch-strength-instruction">
+        <h4>Instructions: Give me four pinches!</h4>
+        
+      </div>
+
     </div>
     <div id=output></div>
     <div id=progress></div>
+
+    <audio id="pinch_sound" src="../audio/Fuzzy-Beep.mp3" type="audio/ogg"></audio>
     <script src='../js/helpers/application.js'></script>
     <script src="../js/helpers/scene.js"></script>
     <script src="../js/controllers/pinch-strength.js"></script>
+
   </body>
 
 </html>
