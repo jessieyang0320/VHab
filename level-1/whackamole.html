@@ -3,20 +3,18 @@
 	<head>
 		<meta charset=utf-8>
 		<title>Fun-rehab</title>
+		<link rel="stylesheet" href="../css/application.css">
 		<style>
-			body { margin: 0; }
-			canvas { width: 100%; height: 100% }
-      .message-wrapper { width: 100%; height: 100%;}
-      .message { margin-left: 550px; margin-top: 20px;}
+			body {background-image: url(../img/grasslight-small.jpg);}
 		</style>
 	</head>
 	<body>
     <div style="position: fixed; top:0px;" class="message-wrapper">
       <div class="message">
-        Insert Messages Here
+      	Hit the Jackrabbit and avoid hitting the red buttons
+			</div>
         <p><span id="hit_count">0</span> Hits</p>
         <p><span id="lives_count">3</span> Lives</p>
-      </div>
     </div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
     <script src="https://js.leapmotion.com/leap-0.6.4.js"></script>
@@ -26,4 +24,10 @@
 		<script src='../js/application.js'></script>
     <script src="../js/tutorial/scene.js"></script>
     <script src="../js/level-1/whackamole.js"></script>
+		<script type="text/javascript">
+			$(".message").fadeIn("slow");
+			setTimeout(function() {
+				$(".message").fadeOut("slow");
+			}, 4000)
+		</script>
 	</body>

@@ -38,3 +38,15 @@ img#connect-leap{
 canvas{
   z-index: -1;
 }
+.message-wrapper { margin-left: 550px; margin-top: 50px;}
+.message {
+  position: absolute;
+  top: 90px;
+  display: none;
+  height: 150px;
+  width: 200px;
+  background-color: #60D7F1;
+  border-radius: 20px;
+  border: 10px solid #60D7F1;
+  border-top: 25px solid #60D7F1;
+}
