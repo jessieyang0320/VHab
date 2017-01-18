@@ -16,6 +16,7 @@ Leap.loop({background: true}, {
   if (grabStrength > grabStrengthCutoff && oGrabStrength<= grabStrengthCutoff && finished.status === false){
     counter.count -= 1
     console.log(counter.count)
+    $("#grab_sound")[0].play();
     
     if (counter.count === 0) {
     moveOn("You did it!! You can move on.", '../index.html')
