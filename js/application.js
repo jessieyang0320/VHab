@@ -21,9 +21,9 @@ function addButton(px, py, pz, callBackFunction) {
   dynamicTexture.texture.anisotropy = renderer.getMaxAnisotropy()  
   dynamicTexture.clear('#E6E6FA')
   texture1 = dynamicTexture.drawText('Pinch Strength', 70, 280, 'black')
-  // texture2 = dynamicTexture.drawText('Finger Angle', 70, 280, 'black')
-  // texture3 = dynamicTexture.drawText('Grab Strength', 70, 280, 'black')
-  // texture4 = dynamicTexture.drawText('Whackamole', 70, 280, 'black')
+  texture2 = dynamicTexture.drawText('Finger Angle', 70, 280, 'black')
+  texture3 = dynamicTexture.drawText('Grab Strength', 70, 280, 'black')
+  texture4 = dynamicTexture.drawText('Whackamole', 70, 280, 'black')
   var material    = new THREE.MeshBasicMaterial({      
       map : texture1.texture,
       color: 0xffffff, 
