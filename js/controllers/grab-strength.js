@@ -17,9 +17,16 @@ Leap.loop({background: true}, {
     counter.count -= 1
     console.log(counter.count)
     $("#grab_sound")[0].play();
+
+
+    if (counter.count===2){
+      $("#doing-well")[0].play();
+    }
     
     if (counter.count === 0) {
+      $("#you-did-it")[0].play();
     moveOn("You did it!! You can move on.", '../index.html')
+
     finished.status = true    
     }
 
