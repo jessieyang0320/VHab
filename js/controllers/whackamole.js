@@ -1,4 +1,13 @@
-pointLight = new THREE.PointLight( 0xffffff );
+$(document).ready(function() {
+  $(".message").fadeIn("slow");
+  setTimeout(function() {
+    $(".message").fadeOut("slow");
+  }, 4000)
+})
+
+
+
+var pointLight = new THREE.PointLight( 0xffffff );
 pointLight.position.set(1,1,2);
 camera.add(pointLight);
 camera.position.set( 0, 0.3, 0.3 );
@@ -17,13 +26,19 @@ var gameCallBack = function(mesh){
     moveOn("nice one", '../index.html')
   }
   $("#hit_count").html(counter.hits)
-  scene.remove(this.plane.mesh)
+  var px = sample(xPositions)
+  var py = sample(yPositions)
+  var pz = -0.05
+  this.plane.mesh.position.set(px, py, pz)
 }
 
 var trapCallBack = function(mesh) {
   counter.traps += 1;
   $("#lives_count").html(3 - counter.traps);
-  scene.remove(this.plane.mesh)
+  var px = sample(xPositions)
+  var py = sample(yPositions)
+  var pz = -0.05
+  this.plane.mesh.position.set(px, py, pz)
   if(counter.traps === 3){
     alert("game over");
   }
@@ -38,11 +53,6 @@ addTrap(trapCallBack)
 // Y: 0.1 - 0.3
 // Z: -0.05
 
-function checkSuccess() {
-  if(counter.hits === 4) {
-    return true;
-  }
-}
 
 function addWhackamole(callBackFunction) {
 
@@ -60,9 +70,10 @@ function addWhackamole(callBackFunction) {
   var roundButton = new PushButton(
     new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
   ).on('press', callBackFunction)
-  setTimeout(function() {
-    scene.remove(buttonMesh)
-    addWhackamole(gameCallBack)
+  setInterval(function() {
+    px = sample(xPositions)
+    py = sample(yPositions)
+    buttonMesh.position.set(px, py, pz)
   }, 4000)
 }
 
@@ -82,9 +93,10 @@ function addTrap(callBackFunction)  {
   var roundButton = new PushButton(
     new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
   ).on('press', callBackFunction)
-  setTimeout(function() {
-    scene.remove(buttonMesh)
-    addTrap(trapCallBack)
+  setInterval(function() {
+    px = sample(xPositions)
+    py = sample(yPositions)
+    buttonMesh.position.set(px, py, pz)
   }, 3000)
 }
 

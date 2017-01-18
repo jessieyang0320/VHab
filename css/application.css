@@ -52,11 +52,25 @@ img#connect-leap{
 canvas{
   z-index: -1;
 }
-.message-wrapper { margin-left: 550px; margin-top: 50px;}
+.stats {
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: #60D7F1;
+}
+
+.stat {
+    margin-right: 200px;
+    display: inline-block;
+    float: right;
+}
+
 .message {
   position: absolute;
   top: 90px;
   display: none;
+  left: 40%;
   height: 150px;
   width: 200px;
   background-color: #60D7F1;
