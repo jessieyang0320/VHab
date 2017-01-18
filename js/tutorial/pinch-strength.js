@@ -3,20 +3,17 @@ function Counter() {
 }
 
 var pinchStrength , oPinchStrength;
-
 var pinchStrengthCutoff = .8;
 var counter = new Counter();
-
-
 
 Leap.loop({background: true}, {
 
   hand: function(hand){
-oPinchStrength = pinchStrength;
-pinchStrength = hand.pinchStrength;
+    oPinchStrength = pinchStrength;
+    pinchStrength = hand.pinchStrength;
   if (pinchStrength > pinchStrengthCutoff && oPinchStrength <= pinchStrengthCutoff && finished.status === false){
      counter.count +=1
-     console.log("hello")
+     console.log(counter.count)
      // sleep(800)
 
     if(checkSuccess()){
@@ -37,17 +34,6 @@ pinchStrength = hand.pinchStrength;
       })
       .use('proximity');
 
-
-
-
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
 
 function checkSuccess() {
   if(counter.count === 4) {
