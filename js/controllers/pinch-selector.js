@@ -50,7 +50,6 @@
         container.style.position   = 'absolute';
         container.style.top        = '0px';
         container.style.left       = '0px';
-        container.style.background = '#000';
 
         document.body.appendChild( container );
 
