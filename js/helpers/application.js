@@ -21,14 +21,14 @@ function addButton(px, py, pz, name, p1, p2, callBackFunction) {
 
   var dynamicTexture  = new THREEx.DynamicTexture(512,512)
   dynamicTexture.texture.needsUpdate  = true
-  dynamicTexture.context.font = "110px Arial";
-  dynamicTexture.texture.anisotropy = renderer.getMaxAnisotropy()
+  dynamicTexture.context.font = "110px Montserrat";
+  dynamicTexture.texture.anisotropy = renderer.getMaxAnisotropy()  
+
   dynamicTexture.clear('#43C59E')
   texture = dynamicTexture.drawText(name, p1, p2, 'black')
   var material    = new THREE.MeshBasicMaterial({
       map : texture.texture,
-      color: 0xffffff,
-      linewidth: 2
+      color: 0xffffff
   })
   var circleGeo = new THREE.CircleGeometry(0.05, 32);
   var buttonMesh = new THREE.Mesh(circleGeo, material);

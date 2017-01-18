@@ -16,11 +16,19 @@ video {
 }
 #title {
   font-size: 90px;
-  color: #43C59E;
-  left: 500px;
+  margin-left: 585px;
   text-align: center;
   position: fixed;
   top: 80px;
+}
+#statement{
+  font-family: 'Montserrat';
+  font-size: 25px;
+  color: #000000;
+  margin-left: 500px;
+  text-align: center;
+  position: fixed;
+  top: 250px;
 }
 #output{
   font-size: 66px;
