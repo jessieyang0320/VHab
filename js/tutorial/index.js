@@ -1,4 +1,3 @@
-
 addButton(-0.2, 0.1, -0.05, function(mesh){
   window.location.href = 'tutorial/buttons.html'
 })
