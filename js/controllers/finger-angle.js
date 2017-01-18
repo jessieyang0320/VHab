@@ -26,7 +26,16 @@ Leap.loop({background: true}, {
       counter.count +=1
       $("#angle_sound")[0].play();
 
+      if (counter.count===2){
+        $("#doing-well")[0].play();
+      }
+
+      if (counter.count===4){
+      $("#you_are_so_close")[0].play();
+    }
+
       if(checkSuccess()){
+        $("#you-did-it")[0].play();
       moveOn("You did it!! You can move on.", '../index.html')
       finished.status = true
       }
@@ -50,7 +59,7 @@ Leap.loop({background: true}, {
 
 
 function checkSuccess() {
-  if(counter.count === 4) {
+  if(counter.count === 5) {
     return true;
   }
 }

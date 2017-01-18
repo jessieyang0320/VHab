@@ -1,5 +1,5 @@
 function Counter() {
-  this.count = 5
+  this.count = 0
 }
 
 var counter = new Counter();
@@ -14,7 +14,7 @@ Leap.loop({background: true}, {
     grabStrength = hand.grabStrength;
 
   if (grabStrength > grabStrengthCutoff && oGrabStrength <= grabStrengthCutoff && finished.status === false){
-    counter.count -= 1
+    counter.count += 1
     console.log(counter.count)
     $("#grab_sound")[0].play();
 
@@ -22,13 +22,16 @@ Leap.loop({background: true}, {
     if (counter.count===2){
       $("#doing-well")[0].play();
     }
-    
-    if (counter.count === 0) {
-      $("#you-did-it")[0].play();
-    moveOn("You did it!! You can move on.", '../index.html')
 
-    finished.status = true    
+        if (counter.count===4){
+      $("#you_are_so_close")[0].play();
     }
+    
+      if(checkSuccess()){
+        $("#you-did-it")[0].play();
+      moveOn("You did it!! You can move on.", '../index.html')
+      finished.status = true
+      }
 
   }
   output.innerHTML = hand.grabStrength.toPrecision(2);
@@ -46,3 +49,8 @@ Leap.loop({background: true}, {
 var progress = document.getElementById('progress');
     output = document.getElementById('output');
 
+function checkSuccess() {
+  if(counter.count === 5) {
+    return true;
+  }
+}
