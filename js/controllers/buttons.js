@@ -4,14 +4,12 @@ function Counter() {
 
 var counter = new Counter();
 
-
-
 // Circular button:
 var gameCallBack = function(mesh){
   mesh.material.color.setHex(0xccccff);
   counter.count += 1;
   if(checkSuccess()) {
-    moveOn("You pushed all 4 buttons!", '../index.html');
+    moveOn("You pushed all 4 buttons!", '../views/index.html');
   }
 }
 

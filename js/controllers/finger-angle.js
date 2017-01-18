@@ -1,7 +1,8 @@
 function Counter() {
   this.count = 0
 }
-
+var fingerAngle , oFingerAngle;
+var fingerAngleCutoff = .4
 var counter = new Counter();
 
 Leap.loop({background: true}, {
@@ -14,12 +15,15 @@ Leap.loop({background: true}, {
 
     window.TO_DEG = 180 / Math.PI;
     var angle = Math.acos(dotProduct);
-    if (angle > .4 && finished.status === false){
-// 0.2 -> 15 degree  0.5->30 degree
+
+    oFingerAngle = fingerAngle;
+    fingerAngle = angle;
+
+    
+    if (fingerAngle > fingerAngleCutoff && oFingerAngle<=fingerAngleCutoff && finished.status === false){
+
       console.log(counter.count)
       counter.count +=1
-
-      sleep(800)
 
       if(checkSuccess()){
       moveOn("You did it!! You can move on.", '../index.html')
@@ -43,14 +47,6 @@ Leap.loop({background: true}, {
       })
       .use('proximity');
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
 
 function checkSuccess() {
   if(counter.count === 4) {
@@ -60,11 +56,4 @@ function checkSuccess() {
 
   var progress = document.getElementById('progress');
 
-  function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
-    }
-  }
+
