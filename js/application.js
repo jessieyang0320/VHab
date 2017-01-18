@@ -15,6 +15,18 @@ function moveOn(message, newLocation) {
 
 function addButton(px, py, pz, callBackFunction) {
 
+  var dynamicTexture  = new THREEx.DynamicTexture(512,512)
+  dynamicTexture.texture.needsUpdate  = true
+  dynamicTexture.context.font = "100px Arial";
+  dynamicTexture.texture.anisotropy = renderer.getMaxAnisotropy()  
+  dynamicTexture.clear('#E6E6FA')
+  dynamicTexture.drawText('Tutorial', 80, 300, 'black')
+  var material    = new THREE.MeshBasicMaterial({      
+      map : dynamicTexture.texture,
+      color: 0xffffff, 
+      linewidth: 2
+  })
+
   var circleGeo = new THREE.CircleGeometry(0.04, 32);
   var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
   buttonMesh.name = "round button";
