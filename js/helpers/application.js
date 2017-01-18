@@ -26,7 +26,7 @@ function addButton(px, py, pz, name, p1, p2, callBackFunction) {
       color: 0xffffff, 
       linewidth: 2
   })
-  var circleGeo = new THREE.CircleGeometry(0.04, 32);
+  var circleGeo = new THREE.CircleGeometry(0.05, 32);
   var buttonMesh = new THREE.Mesh(circleGeo, material);
   buttonMesh.name = "round button";
   buttonMesh.position.set(px, py, pz);
@@ -40,7 +40,7 @@ function addButton(px, py, pz, name, p1, p2, callBackFunction) {
 }
 
 function addNavigationButton(newLocation) {
-  var circleGeo = new THREE.CircleGeometry(0.025, 32);
+  var circleGeo = new THREE.CircleGeometry(0.025, 35);
   var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
   buttonMesh.name = "round button";
   buttonMesh.position.set(0.18, 0.30, -0.05);
