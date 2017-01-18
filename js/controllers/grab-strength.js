@@ -4,14 +4,19 @@ function Counter() {
 
 var counter = new Counter();
 var finished = new Finished();
+var grabStrength , oGrabStrength;
+var grabStrengthCutoff = .8;
 
 Leap.loop({background: true}, {
 
   hand: function(hand){
-  if (hand.grabStrength > .8 && finished.status === false){
+    oGrabStrength = grabStrength;
+    grabStrength = hand.grabStrength;
+
+  if (grabStrength > grabStrengthCutoff && oGrabStrength<= grabStrengthCutoff && finished.status === false){
     counter.count -= 1
     console.log(counter.count)
-    sleep(790)
+    
     if (counter.count === 0) {
     moveOn("You did it!! You can move on.", '../index.html')
     finished.status = true    
@@ -33,11 +38,3 @@ Leap.loop({background: true}, {
 var progress = document.getElementById('progress');
     output = document.getElementById('output');
 
-  function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
-    }
-  }
