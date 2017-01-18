@@ -18,3 +18,7 @@ addButton(0.22, 0.1, -0.05, "Select", 105 , 280, function(mesh){
   window.location.href = 'views/pinch-selector.html'
 })
 
+
+var statement = document.getElementById('statement');
+statement.innerHTML = "A VR Game for Hand Rehabilitation."
+
