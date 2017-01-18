@@ -61,11 +61,11 @@ canvas{
 }
 
 .message {
+  z-index: 5;
   position: absolute;
   top: 90px;
   display: none;
   left: 40%;
-  height: 150px;
   width: 200px;
   background-color: #60D7F1;
   border-radius: 20px;

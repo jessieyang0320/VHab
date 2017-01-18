@@ -5,13 +5,25 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="../css/application.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src = "https://js.leapmotion.com/leap-0.6.2.min.js" ></script>
     <script src = "../js/lib/three.min.js"></script>
 
   </head>
   <body>
+    <div class="message">
+      <h4>Hover over a sphere and pinch to move it to the right side of the screen</h4>
+    </div>
     <div id="left_background"></div>
     <div id="right_background"></div>
     <script src = "../js/controllers/pinch-selector.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".message").fadeIn("slow");
+        setTimeout(function() {
+          $(".message").fadeOut("slow");
+        }, 4000)
+      });
+    </script>
   </body>
 </html>

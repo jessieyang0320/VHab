@@ -356,6 +356,11 @@
           }
         })
         if (finished !== false){
+          $(".message").html("<h4>Great Job!</h4>");
+          $(".message").fadeIn("slow");
+          setTimeout(function() {
+              window.location.href = '../index.html'
+          }, 4000)
           finished = true
         }
         return finished
