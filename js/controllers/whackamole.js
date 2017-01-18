@@ -1,3 +1,6 @@
+pointLight = new THREE.PointLight( 0xffffff );
+pointLight.position.set(1,1,2);
+camera.add(pointLight);
 camera.position.set( 0, 0.3, 0.3 );
 
 var mole;
@@ -10,8 +13,8 @@ var xPositions = [-0.17, -0.14, -0.11, -0.08, -0.05, -0.02, 0.01, 0.05, 0.07, 0.
 var gameCallBack = function(mesh){
   mesh.material.color.setHex(0xccccff);
   counter.hits += 1;
-  if (counter.hits === 3) {
-    alert("You won!");
+  if (counter.hits === 5) {
+    moveOn("nice one", '../index.html')
   }
   $("#hit_count").html(counter.hits)
   scene.remove(this.plane.mesh)
@@ -44,7 +47,7 @@ function checkSuccess() {
 function addWhackamole(callBackFunction) {
 
   var geometry = new THREE.CircleGeometry(0.03, 32);
-  var jrMaterial = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture("../img/jackrabbit.png") });
+  var jrMaterial = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture("../img/bunny.png") });
   var buttonMesh = new THREE.Mesh(geometry, jrMaterial.clone());
   var px = sample(xPositions)
   var py = sample(yPositions)
@@ -64,14 +67,16 @@ function addWhackamole(callBackFunction) {
 }
 
 function addTrap(callBackFunction)  {
-  var circleGeo = new THREE.CircleGeometry(0.02, 32);
-  var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
+  var geometry = new THREE.CircleGeometry(0.02, 32);
+  var jrMaterial = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture("../img/tiger.png") });
+  var buttonMesh = new THREE.Mesh(geometry, jrMaterial.clone());
+  // var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
   buttonMesh.name = "trap";
   var px = sample(xPositions)
   var py = sample(yPositions)
   var pz = -0.05
 
-  buttonMesh.material.color.setHex(0xe80606)
+  // buttonMesh.material.color.setHex(0xE05024)
   buttonMesh.position.set(px, py, pz);
   scene.add(buttonMesh);
   var roundButton = new PushButton(
