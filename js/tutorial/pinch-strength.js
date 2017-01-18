@@ -13,8 +13,8 @@ Leap.loop({background: true}, {
     pinchStrength = hand.pinchStrength;
   if (pinchStrength > pinchStrengthCutoff && oPinchStrength <= pinchStrengthCutoff && finished.status === false){
      counter.count +=1
+     $("#pinch_sound")[0].play();
      console.log(counter.count)
-     // sleep(800)
 
     if(checkSuccess()){
       moveOn("You did it!! You can move on.", '../index.html')
@@ -33,6 +33,7 @@ Leap.loop({background: true}, {
         rendererOps: {antialias: true}
       })
       .use('proximity');
+
 
 
 function checkSuccess() {
