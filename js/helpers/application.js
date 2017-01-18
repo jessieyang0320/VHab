@@ -10,6 +10,10 @@ var finished = new Finished();
 function moveOn(message, newLocation) {
   var successMsg = "<p>" + message + "</p>";
   $(".message").html(successMsg);
+  $(".message").fadeIn("slow");
+  setTimeout(function() {
+    $(".message").fadeOut("slow");
+  }, 4000)
   addNavigationButton(newLocation);
 }
 
@@ -19,9 +23,10 @@ function addButton(px, py, pz, name, p1, p2, callBackFunction) {
   dynamicTexture.texture.needsUpdate  = true
   dynamicTexture.context.font = "110px Montserrat";
   dynamicTexture.texture.anisotropy = renderer.getMaxAnisotropy()  
+
   dynamicTexture.clear('#43C59E')
   texture = dynamicTexture.drawText(name, p1, p2, 'black')
-  var material    = new THREE.MeshBasicMaterial({      
+  var material    = new THREE.MeshBasicMaterial({
       map : texture.texture,
       color: 0xffffff
   })
@@ -42,6 +47,7 @@ function addNavigationButton(newLocation) {
   var circleGeo = new THREE.CircleGeometry(0.025, 35);
   var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
   buttonMesh.name = "round button";
+  buttonMesh.material.color.setHex(0x43C59E);
   buttonMesh.position.set(0.18, 0.30, -0.05);
   scene.add(buttonMesh);
   var roundButton = new PushButton(
