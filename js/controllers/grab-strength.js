@@ -7,6 +7,8 @@ var finished = new Finished();
 var grabStrength , oGrabStrength;
 var grabStrengthCutoff = .8;
 
+camera.position.set( 0, 0.3, 0.4 );
+
 Leap.loop({background: true}, {
 
   hand: function(hand){

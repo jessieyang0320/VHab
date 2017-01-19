@@ -4,6 +4,7 @@ function Counter() {
 var fingerAngle , oFingerAngle;
 var fingerAngleCutoff = .4
 var counter = new Counter();
+camera.position.set( 0, 0.3, 0.4 );
 
 Leap.loop({background: true}, {
 

@@ -5,6 +5,7 @@ function Counter() {
 var pinchStrength , oPinchStrength;
 var pinchStrengthCutoff = .8;
 var counter = new Counter();
+camera.position.set( 0, 0.3, 0.4 );
 
 Leap.loop({background: true}, {
 
