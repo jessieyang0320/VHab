@@ -4,8 +4,9 @@ Leap.loop({background: true})
   })
   .use('boneHand', {
     targetEl: document.body,
-    jointColor: new THREE.Color(0xffffff),
-    rendererOps: {antialias: true}
+    rendererOps: {antialias: true},
+    jointColor: (new THREE.Color).setHex(0x43C59E),
+    boneColor: (new THREE.Color).setHex(0xffffff),
   })
   .use('proximity');
 

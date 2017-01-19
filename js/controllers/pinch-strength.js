@@ -5,6 +5,7 @@ function Counter() {
 var pinchStrength , oPinchStrength;
 var pinchStrengthCutoff = .8;
 var counter = new Counter();
+camera.position.set( 0, 0.3, 0.4 );
 
 Leap.loop({background: true}, {
 
@@ -29,23 +30,19 @@ Leap.loop({background: true}, {
     moveOn("You did it!! You can move on.", '../index.html')
     finished.status = true
   }
-
-}
-
+  count.innerHTML = 'Count: ' + counter.count
   output.innerHTML = hand.pinchStrength.toPrecision(2);
   progress.style.width = hand.pinchStrength * 100 + '%';
+}
 }
 
 }).use('boneHand', {
         targetEl: document.body,
         jointColor: new THREE.Color(0xffffff),
         rendererOps: {antialias: true},
-        boneScale: 1/5,
-        jointScale: 1/5
+
       })
       .use('proximity');
-
-
 
 function checkSuccess() {
   if(counter.count === 5) {
@@ -56,3 +53,4 @@ function checkSuccess() {
 
 var output = document.getElementById('output'),
     progress = document.getElementById('progress');
+    count = document.getElementById('count');

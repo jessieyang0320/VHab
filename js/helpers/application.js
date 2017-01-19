@@ -21,7 +21,7 @@ function addButton(px, py, pz, name, p1, p2, callBackFunction) {
 
   var dynamicTexture  = new THREEx.DynamicTexture(512,512)
   dynamicTexture.texture.needsUpdate  = true
-  dynamicTexture.context.font = "110px Montserrat";
+  dynamicTexture.context.font = "110px Montserrat, sans-serif";
   dynamicTexture.texture.anisotropy = renderer.getMaxAnisotropy()
 
   dynamicTexture.clear('#43C59E')
