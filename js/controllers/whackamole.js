@@ -20,10 +20,11 @@ var xPositions = [-0.17, -0.14, -0.11, -0.08, -0.05, -0.02, 0.01, 0.05, 0.07, 0.
 
 // Circular button:
 var gameCallBack = function(mesh){
+  $("#rabbit_sound")[0].play();
   mesh.material.color.setHex(0xccccff);
   counter.hits += 1;
   if (counter.hits === 5) {
-    moveOn("nice one", '../index.html')
+    moveOn("<h4>Nice Job!</h4>", '../index.html')
   }
   $("#hit_count").html(counter.hits)
   var px = sample(xPositions)
@@ -33,6 +34,7 @@ var gameCallBack = function(mesh){
 }
 
 var trapCallBack = function(mesh) {
+  $("#tiger_sound")[0].play();
   counter.traps += 1;
   $("#lives_count").html(3 - counter.traps);
   var px = sample(xPositions)
@@ -40,7 +42,7 @@ var trapCallBack = function(mesh) {
   var pz = -0.05
   this.plane.mesh.position.set(px, py, pz)
   if(counter.traps === 3){
-    alert("game over");
+    moveOn("<h4>You are Out of Lives</h4>", '../index.html')
   }
 }
 // Add Buttons to the scene
