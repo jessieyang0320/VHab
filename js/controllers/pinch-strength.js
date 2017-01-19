@@ -29,9 +29,7 @@ Leap.loop({background: true}, {
     moveOn("You did it!! You can move on.", '../index.html')
     finished.status = true
   }
-
-}
-
+  count.innerHTML = 'Count: ' + counter.count
   output.innerHTML = hand.pinchStrength.toPrecision(2);
   progress.style.width = hand.pinchStrength * 100 + '%';
 }
@@ -45,8 +43,6 @@ Leap.loop({background: true}, {
       })
       .use('proximity');
 
-
-
 function checkSuccess() {
   if(counter.count === 5) {
     return true;
@@ -56,3 +52,4 @@ function checkSuccess() {
 
 var output = document.getElementById('output'),
     progress = document.getElementById('progress');
+    count = document.getElementById('count');
