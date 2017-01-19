@@ -81,6 +81,10 @@ canvas{
   border-top: 25px solid #60D7F1;
 }
 
+.instructions {
+  position: absolute;
+}
+
 #exercise-instruction {
   top: 90px;
   margin-left: 30px;
