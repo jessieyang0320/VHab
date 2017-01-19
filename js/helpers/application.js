@@ -22,7 +22,7 @@ function addButton(px, py, pz, name, p1, p2, callBackFunction) {
   var dynamicTexture  = new THREEx.DynamicTexture(512,512)
   dynamicTexture.texture.needsUpdate  = true
   dynamicTexture.context.font = "110px Montserrat, sans-serif";
-  dynamicTexture.texture.anisotropy = renderer.getMaxAnisotropy()  
+  dynamicTexture.texture.anisotropy = renderer.getMaxAnisotropy()
 
   dynamicTexture.clear('#43C59E')
   texture = dynamicTexture.drawText(name, p1, p2, 'black')
@@ -53,8 +53,11 @@ function addNavigationButton(newLocation) {
   var roundButton = new PushButton(
     new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
   ).on('press', function(mesh) {
+    $("#button_sound")[0].play();
     mesh.material.color.setHex(0xccccff);
-    window.location.href = newLocation;
+    setTimeout(function() {
+      window.location.href = newLocation;
+    }, 1000)
   }).on('release', function(mesh){
     mesh.material.color.setHex(0xd81a0d);
   });

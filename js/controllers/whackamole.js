@@ -40,9 +40,12 @@ var trapCallBack = function(mesh) {
   var px = sample(xPositions)
   var py = sample(yPositions)
   var pz = -0.05
-  this.plane.mesh.position.set(px, py, pz)
   if(counter.traps === 3){
     moveOn("<h4>You are Out of Lives</h4>", '../index.html')
+    scene.children.splice(87, 3);
+  }
+  else {
+    this.plane.mesh.position.set(px, py, pz)
   }
 }
 // Add Buttons to the scene
@@ -70,7 +73,11 @@ function addWhackamole(callBackFunction) {
   scene.add(buttonMesh);
   mole = buttonMesh;
   var roundButton = new PushButton(
-    new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
+    new InteractablePlane(buttonMesh, Leap.loopController, {
+      moveX: false,
+      moveY: false,
+      locking: false
+    })
   ).on('press', callBackFunction)
   setInterval(function() {
     px = sample(xPositions)
@@ -93,7 +100,12 @@ function addTrap(callBackFunction)  {
   buttonMesh.position.set(px, py, pz);
   scene.add(buttonMesh);
   var roundButton = new PushButton(
-    new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
+    new InteractablePlane(buttonMesh, Leap.loopController,
+      {
+        moveX: false,
+        moveY: false,
+        locking: false
+      })
   ).on('press', callBackFunction)
   setInterval(function() {
     px = sample(xPositions)
