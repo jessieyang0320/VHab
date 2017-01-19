@@ -1,3 +1,3 @@
 # VHab
-# A virsual reality game for hand rehabilitation
+# A virtual reality game for hand rehabilitation
 
