@@ -34,6 +34,7 @@ Leap.loop({background: true}, {
   output.innerHTML = hand.pinchStrength.toPrecision(2);
   progress.style.width = hand.pinchStrength * 100 + '%';
 }
+}
 
 }).use('boneHand', {
         targetEl: document.body,
