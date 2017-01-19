@@ -23,9 +23,10 @@ video {
 #statement{
   font-size: 22px;
   color: #000000;
-  margin-left: 36%;
+  position: absolute;
+  width: 100%;
+  margin: auto;
   text-align: center;
-  position: fixed;
   top: 38%;
 }
 #output{
