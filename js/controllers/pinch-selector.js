@@ -50,7 +50,6 @@
         container.style.position   = 'absolute';
         container.style.top        = '0px';
         container.style.left       = '0px';
-        container.style.background = '#000';
 
         document.body.appendChild( container );
 
@@ -357,6 +356,11 @@
           }
         })
         if (finished !== false){
+          $(".message").html("<h4>Great Job!</h4>");
+          $(".message").fadeIn("slow");
+          setTimeout(function() {
+              window.location.href = '../index.html'
+          }, 4000)
           finished = true
         }
         return finished
