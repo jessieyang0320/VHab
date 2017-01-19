@@ -31,7 +31,7 @@ Leap.loop({background: true}, {
       }
 
   }
-
+  count.innerHTML = 'Count: ' + counter.count
   output.innerHTML = hand.pinchStrength.toPrecision(2);
   progress.style.width = hand.pinchStrength * 100 + '%';
 }
@@ -54,3 +54,4 @@ function checkSuccess() {
 
 var output = document.getElementById('output'),
     progress = document.getElementById('progress');
+    count = document.getElementById('count');

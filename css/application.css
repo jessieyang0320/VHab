@@ -1,5 +1,5 @@
 body{
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-family: Arial, 'Lucida Grande', sans-serif;
 }
 video {
   position: fixed;
@@ -16,34 +16,34 @@ video {
 }
 #title {
   font-size: 90px;
-  margin-left: 585px;
-  text-align: center;
+  margin-left: 42%;
   position: fixed;
-  top: 80px;
+  top: 15%;
 }
 #statement{
-  font-family: 'Montserrat';
-  font-size: 25px;
+  font-size: 22px;
   color: #000000;
-  margin-left: 500px;
+  margin-left: 36%;
   text-align: center;
   position: fixed;
-  top: 250px;
+  top: 38%;
 }
 #output{
   font-size: 66px;
   color: #43C59E;
   text-align: left;
   position: fixed;
-  bottom: 18px;
+  bottom: 35px;
+  left: 10px;
+  right: 10px;
 }
 
 #progress {
   background: #43C59E;
   position: fixed;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
-  height: 16px;
+  height: 30px;
   width: 0%;
 }
 img#connect-leap{
@@ -79,4 +79,21 @@ canvas{
   border-radius: 20px;
   border: 10px solid #60D7F1;
   border-top: 25px solid #60D7F1;
+}
+
+#exercise-instruction {
+  top: 90px;
+  margin-left: 30px;
+  font-size: 25px;
+}
+
+#exercise-title {
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 25px;
+}
+
+#count {
+  margin-left: 30px;
+  font-size: 25px;
 }

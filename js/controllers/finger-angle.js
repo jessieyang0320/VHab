@@ -44,7 +44,7 @@ Leap.loop({background: true}, {
 
     output_rad.innerHTML = (angle ).toPrecision(2) + ' rad';
     output_deg.innerHTML = (angle * TO_DEG).toPrecision(2) + '°';
-
+    count.innerHTML = 'Count: ' + counter.count
     progress.style.width = angle * 100 + '%';
 }
 }).use('transform', {
@@ -65,5 +65,7 @@ function checkSuccess() {
 }
 
   var progress = document.getElementById('progress');
-
+      output_rad = document.getElementById('output_rad');
+      output_deg = document.getElementById('output_deg');
+      count = document.getElementById('count');
 

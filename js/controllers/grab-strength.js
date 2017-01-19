@@ -34,6 +34,7 @@ Leap.loop({background: true}, {
       }
 
   }
+  count.innerHTML = 'Count: ' + counter.count
   output.innerHTML = hand.grabStrength.toPrecision(2);
   progress.style.width = hand.grabStrength * 100 + '%';
 
@@ -48,6 +49,7 @@ Leap.loop({background: true}, {
 
 var progress = document.getElementById('progress');
     output = document.getElementById('output');
+    count = document.getElementById('count');
 
 function checkSuccess() {
   if(counter.count === 5) {

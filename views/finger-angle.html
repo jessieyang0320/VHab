@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="//js.leapmotion.com/leap-plugins-0.1.12.js"></script>
     <script src="//js.leapmotion.com/leap-widgets-0.1.0.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="../css/application.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <style>
@@ -18,7 +19,7 @@
         color: #43C59E;
         text-align: left;
         position: fixed;
-        bottom: 18px;
+        bottom: 35px;
         cursor: pointer;
       }
       #output_rad{
@@ -28,16 +29,13 @@
   </head>
 
   <body>
-    <div class="message-wrapper">
-      <div class="message">
+      <div id="exercise-title">
         <h3>Finger Stretch Practice</h3>
       </div>
-
-      <div id="pinch-strength-instruction">
+    <div id="exercise-instruction">
         <h4>Instructions: Split index finger and middle finger as wide as possible, do it four times</h4>
-        
       </div>
-    </div>
+    <div id="count"></div>
     <div id=output_rad></div>
     <div id=output_deg></div>
     <div id=progress></div>
