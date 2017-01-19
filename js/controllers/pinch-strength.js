@@ -39,7 +39,8 @@ Leap.loop({background: true}, {
 }).use('boneHand', {
         targetEl: document.body,
         jointColor: new THREE.Color(0xffffff),
-        rendererOps: {antialias: true}
+        rendererOps: {antialias: true},
+        boneScale: 1/3
       })
       .use('proximity');
 
