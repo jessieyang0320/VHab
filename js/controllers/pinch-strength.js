@@ -5,6 +5,7 @@ function Counter() {
 var pinchStrength , oPinchStrength;
 var pinchStrengthCutoff = .8;
 var counter = new Counter();
+camera.position.set( 0, 0.3, 0.4 );
 
 Leap.loop({background: true}, {
 
@@ -38,8 +39,7 @@ Leap.loop({background: true}, {
         targetEl: document.body,
         jointColor: new THREE.Color(0xffffff),
         rendererOps: {antialias: true},
-        boneScale: 1/5,
-        jointScale: 1/5
+
       })
       .use('proximity');
 
