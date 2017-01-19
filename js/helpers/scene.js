@@ -7,7 +7,6 @@ Leap.loop({background: true})
     rendererOps: {antialias: true},
     jointColor: (new THREE.Color).setHex(0x43C59E),
     boneColor: (new THREE.Color).setHex(0xffffff),
-    boneScale: 1/4
   })
   .use('proximity');
 
