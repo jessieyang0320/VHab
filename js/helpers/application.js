@@ -44,8 +44,19 @@ function addButton(px, py, pz, name, p1, p2, callBackFunction) {
 }
 
 function addNavigationButton(newLocation) {
+  var dynamicTexture  = new THREEx.DynamicTexture(512,512)
+  dynamicTexture.texture.needsUpdate  = true
+  dynamicTexture.context.font = "110px Montserrat, sans-serif";
+  dynamicTexture.texture.anisotropy = renderer.getMaxAnisotropy()
+
+  dynamicTexture.clear('#43C59E')
+  texture = dynamicTexture.drawText('Home', 110 , 280, 'black')
+  var material    = new THREE.MeshBasicMaterial({
+      map : texture.texture,
+      color: 0xffffff
+  })
   var circleGeo = new THREE.CircleGeometry(0.025, 35);
-  var buttonMesh = new THREE.Mesh(circleGeo, material.clone());
+  var buttonMesh = new THREE.Mesh(circleGeo, material);
   buttonMesh.name = "round button";
   buttonMesh.material.color.setHex(0x43C59E);
   buttonMesh.position.set(0.18, 0.30, -0.05);
