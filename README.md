@@ -13,3 +13,5 @@ Using the Leap Motion controller to track hand movements and the THREE.js librar
 * [Natalie Liles](https://github.com/nliles)
 * [Jenna Van Conett](https://github.com/jenvanc)
 * [Jessie Yang](https://github.com/jessieyang0320) (Project Lead)
+
+[![Alt text](https://img.youtube.com/vi/JrQM1pRqxw0/0.jpg)](https://www.youtube.com/watch?v=JrQM1pRqxw0)
