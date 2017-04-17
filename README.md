@@ -1,7 +1,9 @@
 # V-Hab
 # A virtual reality game for hand rehabilitation
 
-[Check us out!](http://v-hab.herokuapp.com/index.html)
+If you have a Leap Motion Controller: [Play the game!](http://v-hab.herokuapp.com/index.html)
+Youtube:  [See how it works](https://youtu.be/qPoWPNmsvx0?t=2m44s)
+Interview with Course Report: [V-Hab](https://www.coursereport.com/schools/dev-bootcamp#/news/final-project-spotlight-jessie-jenna-natalie-albert-of-dev-bootcamp)
 
 This game uses the [Leap Motion](https://www.leapmotion.com/) controller with the [THREE.js](https://threejs.org/) JavaScript library to practice some simple hand movements to improve fine motor control.
 
